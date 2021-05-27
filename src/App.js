@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./style.css";
+import ArrayScreen from "./exercicios/array/ArrayScreen";
+import DesestruturacaoScreen from "./exercicios/desestruturacao/DesestruturacaoScreen";
+import PromisesScreen from "./exercicios/promises/PromisesScreen.js";
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Menu></Menu>
+      <Switch>
+        <Route path="/array">
+          <ArrayScreen />
+        </Route>
+        <Route path="/desestruturacao">
+          <DesestruturacaoScreen />
+        </Route>
+        <Route path="/Promises">
+          <PromisesScreen />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
+const Menu = () => {
+  return (
+    <div class="header">
+      <div class="btn-header btn-title">
+        <a href="array">Arrays</a>
+      </div>
+      <div class="btn-header btn-title">
+        <a href="desestruturacao">Desestruturação</a>
+      </div>
+      <div class="btn-header btn-title">
+        <a href="promises">Promises</a>
+      </div>
+    </div>
+  );
+};
 export default App;
