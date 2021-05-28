@@ -1,5 +1,5 @@
-function exercise01() {
-  console.log("test geral 1");
+function exercise01(array) {
+  return array.map((element) => element.name);
 }
 function exercise02() {
   console.log("test geral 2");

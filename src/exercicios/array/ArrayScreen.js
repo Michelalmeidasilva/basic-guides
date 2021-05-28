@@ -11,13 +11,9 @@ const ArrayScreen = () => {
         <CodeBox objName="colaboradores" obj={colaboradores}></CodeBox>
         <CodeBox objName="installments" obj={installments}></CodeBox>
       </div>
-      <div>
-        <div class="arrays">
-          <GeralScreen></GeralScreen>
-          <ReduceScreen></ReduceScreen>
-          <SortScreen></SortScreen>
-        </div>
-      </div>
+      <GeralScreen></GeralScreen>
+      <ReduceScreen></ReduceScreen>
+      <SortScreen></SortScreen>
     </body>
   );
 };
