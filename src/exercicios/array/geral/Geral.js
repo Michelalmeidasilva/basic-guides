@@ -1,26 +1,90 @@
-function exercise01(array) {
-  return array.map((element) => element.name);
+import { getStudents } from "../Data";
+
+/**
+ * Retornar um array de nomes existentes.
+ */
+function exercise01() {
+  const studentsNames = getStudents().map(({ name }) => name);
+  alert(`nomes: ${JSON.stringify(studentsNames)}`);
+  return studentsNames;
 }
+
+/**
+ * Retornar um array de items de estudantes que têm bolsa.
+ */
 function exercise02() {
-  console.log("test geral 2");
+  const studentsHasScholarship = getStudents().filter(
+    (element) => element.scholarship
+  );
+  alert(
+    `Array de Estudantes com bolsa: ${JSON.stringify(studentsHasScholarship)}`
+  );
+  return studentsHasScholarship;
 }
+
+/**
+ * Retornar um array de items de pessoas com menos de 23 anos.
+ */
 function exercise03() {
-  console.log("test geral 3");
+  const studentsLessThan23 = getStudents().filter(
+    (element) => element.age < 23
+  );
+  alert(
+    `Array de Estudantes com menos de 23 anos: ${JSON.stringify(
+      studentsLessThan23
+    )}`
+  );
+  return studentsLessThan23;
 }
+
+/**
+ * Testar se todos são bolsistas (scholarship).
+ */
 function exercise04() {
-  console.log("test geral 4");
+  const testScholaship = getStudents().every(
+    (element) => element.scholarship === true
+  );
+  alert(`Teste: Todos são bolsistas? ${testScholaship}`);
 }
+
+/**
+ * Testar se existe algum bosista (scholarship).
+ */
 function exercise05() {
-  console.log("test geral 5");
+  const testScholaship = getStudents().some(
+    (student) => student.scholarship === true
+  );
+  alert(`Teste: Existe alguem bolsista? ${testScholaship}`);
 }
+
+/**
+ * Retornar a soma de todos as idades dos alunos.
+ */
 function exercise06() {
-  console.log("test geral 6");
+  const sumAges = getStudents().reduce(
+    (accumulator, currentValue) => accumulator + currentValue.age,
+    0
+  );
+  alert(`Idade Total: ${sumAges}`);
+  return sumAges;
 }
+
+/**
+ * Retornar um array em ordem crescente de idades.
+ */
 function exercise07() {
-  console.log("test geral 7");
+  const studentsbyAscAges = getStudents().sort((a, b) => a.age - b.age);
+  alert(`Ordem Crescente: ${JSON.stringify(studentsbyAscAges, null, 4)}`);
+  return studentsbyAscAges;
 }
+
+/**
+ * Retornar um array em ordem decrescente de idades.
+ */
 function exercise08() {
-  console.log("test geral 8");
+  const studentsbyDscAges = getStudents().sort((a, b) => b.age - a.age);
+  alert(`Ordem Descrescente: ${JSON.stringify(studentsbyDscAges, null, 4)}`);
+  return studentsbyDscAges;
 }
 
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
