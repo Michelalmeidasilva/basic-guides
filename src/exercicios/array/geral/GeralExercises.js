@@ -1,11 +1,11 @@
-import { getStudents } from "../Data";
+import { getStudents } from "../../Data";
 
 /**
  * Retornar um array de nomes existentes.
  */
 function exercise01() {
   const studentsNames = getStudents().map(({ name }) => name);
-  alert(`nomes: ${JSON.stringify(studentsNames)}`);
+  alert(`nomes existentes: ${JSON.stringify(studentsNames, null, 2)}`);
   return studentsNames;
 }
 
@@ -17,7 +17,11 @@ function exercise02() {
     (element) => element.scholarship
   );
   alert(
-    `Array de Estudantes com bolsa: ${JSON.stringify(studentsHasScholarship)}`
+    `Array de Estudantes com bolsa: ${JSON.stringify(
+      studentsHasScholarship,
+      null,
+      4
+    )}`
   );
   return studentsHasScholarship;
 }
@@ -31,7 +35,9 @@ function exercise03() {
   );
   alert(
     `Array de Estudantes com menos de 23 anos: ${JSON.stringify(
-      studentsLessThan23
+      studentsLessThan23,
+      null,
+      2
     )}`
   );
   return studentsLessThan23;

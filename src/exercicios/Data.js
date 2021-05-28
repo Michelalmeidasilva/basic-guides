@@ -5,7 +5,17 @@ export const getStudents = () => {
     { id: 3, name: "Kayle", age: 22, scholarship: true },
   ];
 };
-
+export const getUser = () => {
+  return {
+    nome: "Usuário",
+    idade: 25,
+    endereco: {
+      rua: "Rua central",
+      numero: 1,
+    },
+    projetos: ["Projeto 1", "Projeto 2"],
+  };
+};
 export const getColaboradores = () => {
   return [
     { name: "Juca", idade: 25, cargo: "front-end" },

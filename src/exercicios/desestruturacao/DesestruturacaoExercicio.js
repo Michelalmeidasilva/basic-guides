@@ -1,23 +1,68 @@
+import { getUser, getStudents } from "../Data";
+
+/**
+ * A) Dado o objeto user, realize os seguintes exercícios utilizando ao máximo a desestruturação:
+ */
+
+//1 Desestruture e imprima o nome.
+
 function exercise01() {
-  console.log("Desestruturação 1123213123");
+  const { nome } = getUser();
+  alert(`nome: ${nome}`);
 }
+
+//2 Desestruture e imprima a rua.
+
 function exercise02() {
-  console.log("Desestruturação 2");
+  var User = getUser();
+  const {
+    endereco: { rua },
+  } = User;
+  alert(`rua: ${rua}`);
 }
+
+//3 Desestruture e imprima os projetos.
+
 function exercise03() {
-  console.log("Desestruturação 3");
+  const { projetos } = getUser();
+  alert(`projetos: ${projetos}`);
 }
+
+//4 A)Desestruture e imprima a segunda posição da propriedade projetos.
 function exercise04() {
-  console.log("Desestruturação 4");
+  const { projetos } = getUser();
+  alert(`projetos: ${projetos[1]}`);
 }
+
+/**
+ * B) Dado o array studentsObj , realize os seguintes exercícios utilizando ao máximo a desestruturação:
+ */
+
+//1 Desestruture e imprima o primeiro elemento do array.
+
 function exercise05() {
-  console.log("Desestruturação 5");
+  const Students = getStudents();
+  const {
+    id: idFirstElement,
+    name: NameFirstElement,
+    age: ageFirstElement,
+    scholarship: scholarshipFirstElement,
+  } = Students[0];
+
+  alert(`
+    Primeiro elemento: ${idFirstElement},${ageFirstElement},${NameFirstElement},${scholarshipFirstElement}
+  `);
 }
+
+//2 Desestruture e imprima o terceiro elemento do array.
 function exercise06() {
   console.log("Desestruturação 6");
 }
+
+//3 Desestruture e imprima o nome do segundo elemento do array.
 function exercise07() {
-  console.log("Desestruturação 6");
+  const { name: name } = getStudents()[1];
+  alert(`Terceiro elemento: ${name}`);
 }
 
 const DesestruturacaoExercicio = {

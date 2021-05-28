@@ -1,4 +1,5 @@
-import { getColaboradores, getInstallments } from "../Data";
+import { getColaboradores, getInstallments } from "../../Data";
+import { formatToJson, formatMoney } from "../../../helpers/format-json";
 
 /**
  * Utilizando a função reduce imprima a soma da idade de todos os colaboradores.
@@ -25,7 +26,7 @@ const exercise02 = () => {
     .map((colaborador) => colaborador.cargo)
     .reduce(reducer, {});
 
-  alert(`Saida: ${JSON.stringify(result, null, 4)}`);
+  alert(`Saida: ${formatToJson(result, 4)}`);
 };
 
 /**
@@ -37,7 +38,7 @@ const exercise03 = () => {
     (accumulator, { value }) => accumulator + value,
     0
   );
-  alert(`Total das parcelas: ${Intl.NumberFormat("id").format(sum)}`);
+  alert(`Total das parcelas: R\$ ${formatMoney(sum)}`);
 };
 
 /**

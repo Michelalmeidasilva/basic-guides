@@ -1,9 +1,25 @@
 import "../../style.css";
+
 import DesestruturacaoExercicio from "./DesestruturacaoExercicio";
+import CodeBox from "../CodeBox";
+import { getUser, getStudents } from "../Data";
 
 const DesestruturacaoScreen = () => {
+  const User = getUser();
   return (
     <body>
+      <div class="row">
+        <CodeBox>
+          <pre>const User ={JSON.stringify(User, null, 4)}</pre>
+        </CodeBox>
+        <CodeBox>
+          const studentsObj =[
+          {getStudents().map((element) => (
+            <p>{JSON.stringify(element)}</p>
+          ))}
+          ]
+        </CodeBox>
+      </div>
       <div class="molde">
         <h2>Exercicios de Desestruturacao </h2>
         <p>

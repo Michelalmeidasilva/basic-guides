@@ -1,12 +1,13 @@
-import { getColaboradores } from "../Data";
-
+import { getColaboradores } from "../../Data";
+import { formatToJson } from "../../../helpers/format-json";
 /**
  * D)Utilizando o array colaboradores fornecido anteriormente realize os seguintes exercícios:
  * Utilizando a função sort imprima o array de colaboradores ordenado por idade de forma crescente.
  */
 
 function exercise01() {
-  console.log("Sort 1");
+  const colaboradoresASC = getColaboradores().sort((a, b) => a.age - b.age);
+  alert(`Em ordem crescente:${formatToJson(colaboradoresASC, 4)}`);
 }
 
 /**
@@ -15,6 +16,7 @@ function exercise01() {
 function exercise02() {
   console.log("Sort 2");
 }
+
 /**
  * . Utilizando a função sort imprima o array de colaboradores ordenado
  * por cargo, sendo a ordem: estagiario (1º), front-end (2º), back-end (3º), designer (4º).
