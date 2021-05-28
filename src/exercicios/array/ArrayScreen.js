@@ -11,8 +11,8 @@ const ArrayScreen = () => {
     <body>
       <div class="constantes">
         <CodeBox objName="studentsObj" obj={getStudents()}></CodeBox>
-        <CodeBox objName="colaboradores" obj={getInstallments()}></CodeBox>
-        <CodeBox objName="installments" obj={getColaboradores()}></CodeBox>
+        <CodeBox objName="installments" obj={getInstallments()}></CodeBox>
+        <CodeBox objName="colaboradores" obj={getColaboradores()}></CodeBox>
       </div>
       <GeralScreen></GeralScreen>
       <ReduceScreen></ReduceScreen>
