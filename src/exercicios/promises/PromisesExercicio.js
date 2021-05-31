@@ -1,23 +1,38 @@
+const promise2 = () =>
+  new Promise((resolve) =>
+    setTimeout(() => resolve(console.log("resolveu 2")), 2000)
+  );
+const promise3 = () =>
+  new Promise((resolve, reject) =>
+    setTimeout(() => reject(console.log("rejeitou 3")), 3000)
+  );
+const promise1 = () =>
+  new Promise((resolve) =>
+    setTimeout(() => resolve(console.log("resolveu 1")), 2000)
+  );
+
 function exercise01() {
-  console.log("Promises 1123213123");
+  promise2();
 }
 function exercise02() {
-  console.log("Promises 2");
+  promise3();
 }
 function exercise03() {
-  console.log("Promises 3");
+  promise1();
 }
 function exercise04() {
-  console.log("Promises 4");
+  Promise.all([promise1(), promise2(), promise3()]).then((values) => {
+    console.log(values);
+  });
 }
 function exercise05() {
-  console.log("Promises 5");
+  // console.log("Promises 5");
 }
+
 function exercise06() {
-  console.log("Promises 6");
-}
-function exercise07() {
-  console.log("Promises 6");
+  // Promise.race([promise1(), promise2(), promise3()]).then((values) => {
+  //   console.log(values);
+  // });
 }
 
 const PromisesExercicio = {
@@ -27,7 +42,6 @@ const PromisesExercicio = {
   exercise04,
   exercise05,
   exercise06,
-  exercise07,
 };
 
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
