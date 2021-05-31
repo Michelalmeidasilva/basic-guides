@@ -1,11 +1,12 @@
 import { getStudents } from "../../Data";
+import { formatToJson } from "../../../helpers/format-json";
 
 /**
  * Retornar um array de nomes existentes.
  */
 function exercise01() {
   const studentsNames = getStudents().map(({ name }) => name);
-  alert(`nomes existentes: ${JSON.stringify(studentsNames, null, 2)}`);
+  alert(`nomes existentes: ${formatToJson(studentsNames, 2)}`);
   return studentsNames;
 }
 
@@ -17,11 +18,7 @@ function exercise02() {
     (element) => element.scholarship
   );
   alert(
-    `Array de Estudantes com bolsa: ${JSON.stringify(
-      studentsHasScholarship,
-      null,
-      4
-    )}`
+    `Array de Estudantes com bolsa: ${formatToJson(studentsHasScholarship, 4)}`
   );
   return studentsHasScholarship;
 }
@@ -34,9 +31,8 @@ function exercise03() {
     (element) => element.age < 23
   );
   alert(
-    `Array de Estudantes com menos de 23 anos: ${JSON.stringify(
+    `Array de Estudantes com menos de 23 anos: ${formatToJson(
       studentsLessThan23,
-      null,
       2
     )}`
   );
@@ -47,19 +43,15 @@ function exercise03() {
  * Testar se todos são bolsistas (scholarship).
  */
 function exercise04() {
-  const testScholaship = getStudents().every(
-    (element) => element.scholarship === true
-  );
+  const testScholaship = getStudents().every((element) => element.scholarship);
   alert(`Teste: Todos são bolsistas? ${testScholaship}`);
 }
 
 /**
- * Testar se existe algum bosista (scholarship).
+ * Testar se existe algum bolsista (scholarship).
  */
 function exercise05() {
-  const testScholaship = getStudents().some(
-    (student) => student.scholarship === true
-  );
+  const testScholaship = getStudents().find((student) => student.scholarship);
   alert(`Teste: Existe alguem bolsista? ${testScholaship}`);
 }
 
@@ -80,7 +72,7 @@ function exercise06() {
  */
 function exercise07() {
   const studentsbyAscAges = getStudents().sort((a, b) => a.age - b.age);
-  alert(`Ordem Crescente: ${JSON.stringify(studentsbyAscAges, null, 4)}`);
+  alert(`Ordem Crescente: ${formatToJson(studentsbyAscAges, 4)}`);
   return studentsbyAscAges;
 }
 
@@ -89,7 +81,7 @@ function exercise07() {
  */
 function exercise08() {
   const studentsbyDscAges = getStudents().sort((a, b) => b.age - a.age);
-  alert(`Ordem Descrescente: ${JSON.stringify(studentsbyDscAges, null, 4)}`);
+  alert(`Ordem Descrescente: ${formatToJson(studentsbyDscAges, 4)}`);
   return studentsbyDscAges;
 }
 

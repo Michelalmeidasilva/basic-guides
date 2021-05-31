@@ -1,4 +1,4 @@
-import { getColaboradores } from "../../Data";
+import { getColaboradores, getInstallments } from "../../Data";
 import { formatToJson } from "../../../helpers/format-json";
 /**
  * D)Utilizando o array colaboradores fornecido anteriormente realize os seguintes exercícios:
@@ -14,7 +14,8 @@ function exercise01() {
  * .Utilizando a função sort imprima o array de colaboradores ordenado por idade de forma decrescente..
  */
 function exercise02() {
-  console.log("Sort 2");
+  const colaboradoresDSC = getColaboradores().sort((a, b) => b.age - a.age);
+  alert(`Em ordem crescente:${formatToJson(colaboradoresDSC, 4)}`);
 }
 
 /**
@@ -22,7 +23,15 @@ function exercise02() {
  * por cargo, sendo a ordem: estagiario (1º), front-end (2º), back-end (3º), designer (4º).
  */
 function exercise03() {
-  console.log("Sort 3");
+  const result = sortbySpecificOrder(getColaboradores());
+  alert(`Em ordem pedida:${formatToJson(result, 4)}`);
+}
+
+function sortbySpecificOrder(arr) {
+  const sortBy = ["estagiario", "front-end", "back-end", "designer"];
+  return arr.sort(function (a, b) {
+    return sortBy.indexOf(a.cargo) - sortBy.indexOf(b.cargo);
+  });
 }
 
 /**
@@ -31,7 +40,10 @@ function exercise03() {
  */
 
 function exercise04() {
-  console.log("Sort 4");
+  const result = getColaboradores().sort(
+    (x, y) => x.idade - y.idade || x.cargo - y.cargo
+  );
+  alert(formatToJson(result), 2);
 }
 
 // Utilizando o array installments fornecido anteriormente realize os seguintes exercícios:
@@ -40,7 +52,7 @@ function exercise04() {
  * Utilizando a função sort imprima o array de installments ordenado por valor de forma decrescente.
  */
 function exercise05() {
-  console.log("Sort 5");
+  alert(formatToJson(getInstallments().sort((x, y) => y.value - x.value)));
 }
 
 /**
@@ -48,7 +60,7 @@ function exercise05() {
  * em caso de empate, o desempate deve ocorrer pelo número da parcela de forma decrescente.
  */
 function exercise06() {
-  console.log("Sort 6");
+  alert(formatToJson(getInstallments().sort((x, y) => x.value - y.value)), 2);
 }
 
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */

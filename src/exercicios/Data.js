@@ -5,6 +5,7 @@ export const getStudents = () => {
     { id: 3, name: "Kayle", age: 22, scholarship: true },
   ];
 };
+
 export const getUser = () => {
   return {
     nome: "Usuário",
@@ -16,6 +17,7 @@ export const getUser = () => {
     projetos: ["Projeto 1", "Projeto 2"],
   };
 };
+
 export const getColaboradores = () => {
   return [
     { name: "Juca", idade: 25, cargo: "front-end" },
@@ -26,6 +28,7 @@ export const getColaboradores = () => {
     { name: "Jéssica", idade: 23, cargo: "front-end" },
   ];
 };
+
 export const getInstallments = () => {
   return [
     { installment_number: 1, value: 123.45, status: "Pago" },

@@ -12,6 +12,7 @@ const exercise01 = () => {
   alert(`Idade Total: ${sumAges}`);
   return sumAges;
 };
+
 /**
  * Utilizando a função reduce crie e imprima um objeto que possui a quantidade de
  * colaboradores em cada cargo. Saída esperada: 'front-end': 2, 'back-end': 2, designer: 1, estagiario: 1
@@ -45,7 +46,6 @@ const exercise03 = () => {
  * Utilizando a função reduce crie e imprima um objeto
  * que possui o valor total em aberto e já pago. Saída esperada: total_paid: 386.78, total_open: 316.3 .
  */
-
 const exercise04 = () => {
   const reducer = ({ total_paid, total_open }, { value, status }) => {
     status === "Pago" ? (total_paid += value) : (total_open += value);
@@ -59,7 +59,7 @@ const exercise04 = () => {
     .map((element) => element)
     .reduce(reducer, { total_paid: 0, total_open: 0 });
 
-  alert(`Saida: ${JSON.stringify(result, null, 4)}`);
+  alert(`Saida: ${formatToJson(result, 4)}`);
 };
 
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */

@@ -61,8 +61,8 @@ function exercise06() {
 
 //3 Desestruture e imprima o nome do segundo elemento do array.
 function exercise07() {
-  const { name: name } = getStudents()[1];
-  alert(`Terceiro elemento: ${name}`);
+  const { name: nameTest } = getStudents()[1];
+  alert(`Terceiro elemento: ${nameTest}`);
 }
 
 const DesestruturacaoExercicio = {

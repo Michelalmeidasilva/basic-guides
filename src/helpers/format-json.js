@@ -3,5 +3,5 @@ export const formatToJson = (obj, formatter) => {
 };
 
 export const formatMoney = (value) => {
-  return Intl.NumberFormat("id").format(value);
+  return Intl.NumberFormat("pt-BR").format(value);
 };
