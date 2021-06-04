@@ -1,7 +1,4 @@
-export const formatToJson = (obj, formatter) => {
-  return JSON.stringify(obj, null, formatter);
-};
+export const formatToJson = (obj, formatter) =>
+  JSON.stringify(obj, null, formatter);
 
-export const formatMoney = (value) => {
-  return Intl.NumberFormat("pt-BR").format(value);
-};
+export const formatMoney = (value) => Intl.NumberFormat("pt-BR").format(value);

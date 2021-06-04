@@ -9,13 +9,16 @@ function App() {
   return (
     <Router>
       <Menu></Menu>
+
       <Switch>
         <Route path="/array">
           <ArrayScreen />
         </Route>
+
         <Route path="/desestruturacao">
           <DesestruturacaoScreen />
         </Route>
+
         <Route path="/Promises">
           <PromisesScreen />
         </Route>
@@ -30,9 +33,11 @@ const Menu = () => {
       <div class="btn-header btn-title">
         <a href="array">Arrays</a>
       </div>
+
       <div class="btn-header btn-title">
         <a href="desestruturacao">Desestruturação</a>
       </div>
+
       <div class="btn-header btn-title">
         <a href="promises">Promises</a>
       </div>
