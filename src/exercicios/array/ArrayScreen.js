@@ -18,6 +18,7 @@ const ArrayScreen = () => {
           ))}
           ]
         </CodeBox>
+
         <CodeBox>
           const InstallmentsObj =[
           {getInstallments().map((element) => (
@@ -25,6 +26,7 @@ const ArrayScreen = () => {
           ))}
           ]
         </CodeBox>
+
         <CodeBox>
           const colaboradoresObj =[
           {getColaboradores().map((element) => (
@@ -33,8 +35,11 @@ const ArrayScreen = () => {
           ]
         </CodeBox>
       </div>
+
       <GeralScreen></GeralScreen>
+
       <ReduceScreen></ReduceScreen>
+
       <SortScreen></SortScreen>
     </body>
   );

@@ -6,7 +6,9 @@ import { formatToJson } from "../../../helpers/format-json";
  */
 function exercise01() {
   const studentsNames = getStudents().map(({ name }) => name);
+
   alert(`nomes existentes: ${formatToJson(studentsNames, 2)}`);
+
   return studentsNames;
 }
 
@@ -17,9 +19,11 @@ function exercise02() {
   const studentsHasScholarship = getStudents().filter(
     (element) => element.scholarship
   );
+
   alert(
     `Array de Estudantes com bolsa: ${formatToJson(studentsHasScholarship, 4)}`
   );
+
   return studentsHasScholarship;
 }
 
@@ -30,12 +34,14 @@ function exercise03() {
   const studentsLessThan23 = getStudents().filter(
     (element) => element.age < 23
   );
+
   alert(
     `Array de Estudantes com menos de 23 anos: ${formatToJson(
       studentsLessThan23,
       2
     )}`
   );
+
   return studentsLessThan23;
 }
 
@@ -44,6 +50,7 @@ function exercise03() {
  */
 function exercise04() {
   const testScholaship = getStudents().every((element) => element.scholarship);
+
   alert(`Teste: Todos são bolsistas? ${testScholaship}`);
 }
 
@@ -52,6 +59,7 @@ function exercise04() {
  */
 function exercise05() {
   const testScholaship = getStudents().find((student) => student.scholarship);
+
   alert(`Teste: Existe alguem bolsista? ${testScholaship}`);
 }
 
@@ -63,7 +71,9 @@ function exercise06() {
     (accumulator, currentValue) => accumulator + currentValue.age,
     0
   );
+
   alert(`Idade Total: ${sumAges}`);
+
   return sumAges;
 }
 
@@ -72,7 +82,9 @@ function exercise06() {
  */
 function exercise07() {
   const studentsbyAscAges = getStudents().sort((a, b) => a.age - b.age);
+
   alert(`Ordem Crescente: ${formatToJson(studentsbyAscAges, 4)}`);
+
   return studentsbyAscAges;
 }
 
@@ -81,7 +93,9 @@ function exercise07() {
  */
 function exercise08() {
   const studentsbyDscAges = getStudents().sort((a, b) => b.age - a.age);
+
   alert(`Ordem Descrescente: ${formatToJson(studentsbyDscAges, 4)}`);
+
   return studentsbyDscAges;
 }
 

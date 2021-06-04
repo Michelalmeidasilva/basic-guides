@@ -1,4 +1,4 @@
-// Abordagem com componentes em funções
+/* ---------------------------------------------------------------  /*
 /*{ 1º: Componente sem estado interno} */
 
 function greetingComponentStateless() {
@@ -15,7 +15,8 @@ function greetingComponentStateless() {
   app.innerHTML = greeting();
 }
 
-/*{ 1.1: Passando o component gretting com estado no componente}*/
+/* { 1.1: Passando o component gretting com estado no componente} */
+
 function greetingComponentStateful() {
   var greeting = function () {
     return "<p>" + greeting.data.greeting + ", " + greeting.data.name + "!</p>";
@@ -27,21 +28,23 @@ function greetingComponentStateful() {
   };
 
   var app = document.querySelector("#app");
+
   app.innerHTML = greeting();
 }
 
-// {2: Passando para uma abordagem de classe}
+/* ---------------------------------------------------------------  /*
+/* {2: Passando para uma abordagem de classe} */
 
 /*{2.1 Exemplo com componente que será passado para classe} */
 
 function componentBlogStateful() {
-  var blogPost = function () {
-    return `<div class="post">
+  var blogPost = () => `
+      <div class="post">
         <h1>${blogPost.postData.title}</h1>
         <h3>By ${blogPost.postData.author}</h3>
         <p>${blogPost.postData.body}</p>
-        </div>`;
-  };
+      </div>
+    `;
 
   blogPost.postData = {
     title: "A JS Trick",
@@ -53,7 +56,7 @@ function componentBlogStateful() {
   app.innerHTML = app.innerHTML = blogPost();
 }
 
-//   { 2.2: Passando o component blog para uma abordagem com  classe}   */
+/*{ 2.2: Passando o component blog para uma abordagem com  classe}   */
 
 class BlogPost {
   constructor(props) {
@@ -76,6 +79,7 @@ class BlogPost {
     this.state.body = newBody;
   }
 }
+
 const blogPostComponent = new BlogPost({
   author: "test",
   title: "test title",
@@ -84,9 +88,10 @@ const blogPostComponent = new BlogPost({
 
 document.querySelector("body").innerHTML = blogPostComponent.render();
 
-//   { 3.: Utilizando o React }   */
+/* ---------------------------------------------------------------  /*
+/*   { 3.: Utilizando o React }   */
 
-// { 3.1: abordagem com classes }   */
+// { 3.1: abordagem com classes }
 class Example extends React.Component {
   constructor(props) {
     super(props);
@@ -106,6 +111,7 @@ class Example extends React.Component {
     return (
       <div>
         <p>You clicked {this.state.count} times</p>
+
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>
           Click me
         </button>
@@ -126,6 +132,7 @@ const abordagemUtilizandoHooks = () => {
   return (
     <div>
       <p>You clicked {count} times</p>
+
       <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   );
