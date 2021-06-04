@@ -1,38 +1,61 @@
-const promise2 = () =>
+//Criar uma promise que resolva em 2 segundos e retorna um texto 'resolveu 2'
+function exercise01() {
   new Promise((resolve) =>
     setTimeout(() => resolve(console.log("resolveu 2")), 2000)
   );
-const promise3 = () =>
+}
+
+//Criar uma promise que rejeita em 3 segundos e retorna um texto 'rejeitou 3'
+function exercise02() {
   new Promise((resolve, reject) =>
     setTimeout(() => reject(console.log("rejeitou 3")), 3000)
   );
-const promise1 = () =>
+}
+
+//Criar uma promise que resolva em 1 segundos e retorna um texto 'resolveu 1'
+
+function exercise03() {
   new Promise((resolve) =>
     setTimeout(() => resolve(console.log("resolveu 1")), 2000)
   );
+}
 
-function exercise01() {
-  promise2();
-}
-function exercise02() {
-  promise3();
-}
-function exercise03() {
-  promise1();
-}
+//Fazer um exemplo de promise.all que resolve, imprime o resultado de todas promises
 function exercise04() {
-  Promise.all([promise1(), promise2(), promise3()]).then((values) => {
-    console.log(values);
+  Promise.all([
+    Promise.resolve("10"),
+    Promise.resolve("32"),
+    Promise.resolve("34"),
+  ]).then((value) => {
+    console.log(value);
   });
 }
+
+//Fazer um exemplo de promise.all que rejeita, imprime o erro
 function exercise05() {
-  // console.log("Promises 5");
+  Promise.all([
+    Promise.reject("10"),
+    Promise.reject("32"),
+    Promise.reject("test"),
+  ]).catch((err) => {
+    console.log(err);
+  });
 }
 
+// Fazer um exemplo de promise.race que resolve, imprime a promise
 function exercise06() {
-  // Promise.race([promise1(), promise2(), promise3()]).then((values) => {
-  //   console.log(values);
-  // });
+  Promise.race([Promise.resolve("10"), Promise.resolve("32")]).then(
+    (promise) => {
+      console.log(promise);
+    }
+  );
+}
+
+//Fazer um exemplo de promise.race que rejeita, imprime o erro
+function exercise07() {
+  Promise.race([Promise.reject("10"), Promise.reject("32")]).catch((err) => {
+    console.log(err);
+  });
 }
 
 const PromisesExercicio = {
@@ -42,7 +65,7 @@ const PromisesExercicio = {
   exercise04,
   exercise05,
   exercise06,
+  exercise07,
 };
 
-/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default PromisesExercicio;

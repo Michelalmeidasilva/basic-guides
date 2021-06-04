@@ -33,14 +33,16 @@ const PromisesScreen = () => {
         <button onClick={PromisesExercicio.exercise04}>
           Executar exercício 04
         </button>
-
         <p>5 Fazer um exemplo de promise.all que rejeita, imprime o erro</p>
         <button onClick={PromisesExercicio.exercise05}>
           Executar exercício 05
         </button>
-
-        <p>6 Fazer um exemplo de promise.race que rejeita, imprime o erro</p>
+        <p>6 Fazer um exemplo de promise.race que resolve, imprime a promise</p>
         <button onClick={PromisesExercicio.exercise06}>
+          Executar exercício 06
+        </button>{" "}
+        <p>7 Fazer um exemplo de promise.race que rejeita, imprime o erro</p>
+        <button onClick={PromisesExercicio.exercise07}>
           Executar exercício 06
         </button>
       </div>
